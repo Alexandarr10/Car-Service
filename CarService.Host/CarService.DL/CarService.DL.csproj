@@ -2,13 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Car_Service.DL</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Car-Service.Models\Car-Service.Models.csproj" />
+    <ProjectReference Include="..\CarService.Models\CarService.Models.csproj" />
   </ItemGroup>
 
 </Project>
