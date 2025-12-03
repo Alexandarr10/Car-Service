@@ -20,14 +20,15 @@ namespace CarService.Host.Controllers
             ILogger<CarsController> logger)
         {
             _carCrudService = carCrudService;
+            _mapper = mapper;
         }
 
         [HttpDelete]
-        public IActionResult DeleteCar(int id)
+        public IActionResult DeleteCar(Guid id)
         {
-            if (id <= 0)
+            if (id == Guid.Empty)
             {
-                return BadRequest("ID must be greater than zero.");
+                return BadRequest("ID must be a valid guid.");
             }
             var car = _carCrudService.GetById(id);
             if (car == null)
@@ -39,9 +40,9 @@ namespace CarService.Host.Controllers
         }
 
         [HttpGet(nameof(GetById))]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(Guid id)
         {
-            if (id <= 0)
+            if (id == Guid.Empty)
             {
                
                 return BadRequest("ID must be greater than zero.");
